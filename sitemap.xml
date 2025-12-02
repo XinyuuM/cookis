@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+
+<url>
+ <loc>https://www.xinyuu.cn/</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/jobpal</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/docs/doraemon</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/docs/roundtable</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/docs/category/-favlist</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/docs/beshop</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/blog</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/pay/donate</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/love</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/blackboard/xinyuu/about-privacy</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/god/</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/blackboard/topic/tp233</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/blackboard/sword-of-damocles</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.xinyuu.cn/blackboard/topic/tp235</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-12-01</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+</urlset>
