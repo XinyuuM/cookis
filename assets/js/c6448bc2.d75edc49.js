@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkclassic=globalThis.webpackChunkclassic||[]).push([[2569],{87949:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"nintendoswitch"}')}}]);
