@@ -19,12 +19,24 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="功能特性">功能特性<a href="https://xinyuu.cn/blog/2025/12/6/%E5%9C%A8Docusaurus%E4%B8%AD%E5%AE%9E%E7%8E%B0Material%203%E9%A3%8E%E6%A0%BC%E7%9A%84%E5%9B%BE%E7%89%87%E6%8B%BE%E8%89%B2%E5%99%A8%E6%8F%92%E4%BB%B6#%E5%8A%9F%E8%83%BD%E7%89%B9%E6%80%A7" class="hash-link" aria-label="功能特性的直接链接" title="功能特性的直接链接" translate="no">​</a></h2>
 <p>在开始实现之前，我们先明确这个插件需要具备的核心功能：</p>
 <ol>
-<li class=""><strong>图片上传</strong>：支持拖放和文件选择两种方式</li>
-<li class=""><strong>本地处理</strong>：所有操作在浏览器中完成，无需上传到服务器</li>
-<li class=""><strong>颜色拾取</strong>：点击图片任意位置获取颜色代码</li>
-<li class=""><strong>颜色管理</strong>：历史记录和颜色复制功能</li>
-<li class=""><strong>响应式设计</strong>：完美适配PC端，兼顾移动端操作</li>
-<li class=""><strong>主题集成</strong>：使用Docusaurus的配色系统</li>
+<li class="">
+<p><strong>图片上传</strong>：支持拖放和文件选择两种方式</p>
+</li>
+<li class="">
+<p><strong>本地处理</strong>：所有操作在浏览器中完成，无需上传到服务器</p>
+</li>
+<li class="">
+<p><strong>颜色拾取</strong>：点击图片任意位置获取颜色代码</p>
+</li>
+<li class="">
+<p><strong>颜色管理</strong>：历史记录和颜色复制功能</p>
+</li>
+<li class="">
+<p><strong>响应式设计</strong>：完美适配PC端，兼顾移动端操作</p>
+</li>
+<li class="">
+<p><strong>主题集成</strong>：使用Docusaurus的配色系统</p>
+</li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="技术架构">技术架构<a href="https://xinyuu.cn/blog/2025/12/6/%E5%9C%A8Docusaurus%E4%B8%AD%E5%AE%9E%E7%8E%B0Material%203%E9%A3%8E%E6%A0%BC%E7%9A%84%E5%9B%BE%E7%89%87%E6%8B%BE%E8%89%B2%E5%99%A8%E6%8F%92%E4%BB%B6#%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84" class="hash-link" aria-label="技术架构的直接链接" title="技术架构的直接链接" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="核心技术">核心技术<a href="https://xinyuu.cn/blog/2025/12/6/%E5%9C%A8Docusaurus%E4%B8%AD%E5%AE%9E%E7%8E%B0Material%203%E9%A3%8E%E6%A0%BC%E7%9A%84%E5%9B%BE%E7%89%87%E6%8B%BE%E8%89%B2%E5%99%A8%E6%8F%92%E4%BB%B6#%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF" class="hash-link" aria-label="核心技术的直接链接" title="核心技术的直接链接" translate="no">​</a></h3>
