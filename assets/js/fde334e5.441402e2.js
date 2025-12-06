@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkclassic=globalThis.webpackChunkclassic||[]).push([[3370],{42537:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"datacom"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkclassic=globalThis.webpackChunkclassic||[]).push([[3460],{80608:a=>{a.exports=JSON.parse('{"blogBasePath":"/datacom/hcia","blogTitle":"HCIA \u7b14\u8bb0","authorsListPath":"/datacom/hcia/authors"}')}}]);

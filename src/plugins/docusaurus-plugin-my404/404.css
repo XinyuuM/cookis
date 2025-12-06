@@ -1,0 +1,378 @@
+/* src/pages/NotFound.css */
+/* 明亮主题配色 */
+:root {
+  --primary-pink: #ff7eb6;      /* 主色 - 粉色 */
+  --primary-blue: #6b8cff;      /* 副色 - 蓝色 */
+  --accent-yellow: #ffcc00;     /* 强调色 */
+  --light-bg: #ffffff;          /* 背景色 */
+  --light-surface: #f8f9ff;     /* 表面色 */
+  --text-dark: #333333;         /* 深色文字 */
+  --text-gray: #666666;         /* 灰色文字 */
+  --border-light: #e6e6e6;      /* 浅色边框 */
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-medium: rgba(0, 0, 0, 0.12);
+}
+
+.anime-404 {
+  min-height: 100vh;
+  background: linear-gradient(135deg, 
+    #f5f7ff 0%, 
+    #ffffff 50%, 
+    #f0f2ff 100%
+  );
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+               'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* 主容器 - 左图右文 */
+.error-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 左侧图片区域 */
+.image-column {
+  flex: 1;
+  max-width: 500px;
+}
+
+.anime-image-wrapper {
+  position: relative;
+  background: var(--light-bg);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 
+    0 10px 30px var(--shadow-light),
+    0 0 0 1px var(--border-light);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anime-image-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 40px var(--shadow-medium),
+    0 0 0 1px var(--primary-pink);
+}
+
+.anime-character {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.anime-image-wrapper:hover .anime-character {
+  transform: scale(1.03);
+}
+
+/* 图片装饰元素 */
+.image-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(25px);
+  opacity: 0.4;
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-orb.pink {
+  width: 120px;
+  height: 120px;
+  background: var(--primary-pink);
+  top: 15%;
+  left: 10%;
+}
+
+.floating-orb.blue {
+  width: 90px;
+  height: 90px;
+  background: var(--primary-blue);
+  bottom: 20%;
+  right: 15%;
+  animation-delay: 1s;
+  animation-duration: 10s;
+}
+
+.floating-orb.yellow {
+  width: 70px;
+  height: 70px;
+  background: var(--accent-yellow);
+  top: 60%;
+  left: 20%;
+  animation-delay: 2s;
+  animation-duration: 9s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(15px, -20px) scale(1.1);
+  }
+  66% {
+    transform: translate(-10px, 15px) scale(0.95);
+  }
+}
+
+.image-caption {
+  text-align: center;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 126, 182, 0.1) 0%, 
+    rgba(107, 140, 255, 0.1) 100%
+  );
+  border-radius: 12px;
+  font-style: italic;
+  color: var(--text-dark);
+  font-weight: 500;
+  border: 1px solid var(--border-light);
+}
+
+/* 右侧内容区域 */
+.content-column {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+/* 404数字样式 */
+.error-code {
+  font-size: 5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  letter-spacing: 2px;
+}
+
+.number-4 {
+  color: var(--primary-pink);
+  text-shadow: 
+    0 0 20px rgba(255, 126, 182, 0.3),
+    0 0 40px rgba(255, 126, 182, 0.1);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.number-0 {
+  color: var(--primary-blue);
+  text-shadow: 
+    0 0 20px rgba(107, 140, 255, 0.3),
+    0 0 40px rgba(107, 140, 255, 0.1);
+  animation: pulse 2s ease-in-out infinite 0.2s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+/* 标题样式 */
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.highlight {
+  background: linear-gradient(
+    135deg, 
+    var(--primary-pink) 0%, 
+    var(--primary-blue) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 0 10px;
+  margin: 0 5px;
+}
+
+/* 描述文字 */
+.error-description {
+  font-size: 1.2rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* 原因列表区域 */
+.reasons-section {
+  background: var(--light-bg);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 25px var(--shadow-light);
+  border: 1px solid var(--border-light);
+}
+
+.reasons-section h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reasons-section h3::before {
+  content: '❓';
+  font-size: 1.2rem;
+}
+
+.reasons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reasons-list li {
+  padding: 12px 0;
+  padding-left: 30px;
+  position: relative;
+  color: var(--text-gray);
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.reasons-list li:last-child {
+  border-bottom: none;
+}
+
+.reasons-list li::before {
+  content: '•';
+  color: var(--primary-pink);
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+
+/* 按钮样式 */
+.actions {
+  margin-top: 30px;
+}
+
+.home-button {
+  background: linear-gradient(135deg, #0ccef7, #98c5ff, #cac1ff, #feb5fe, #ffcbd7, #ffdace, #ffe8cb, #ffff02);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 6px 20px rgba(255, 126, 182, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.home-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 10px 30px rgba(255, 126, 182, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.home-button:active {
+  transform: translateY(1px);
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .error-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .image-column,
+  .content-column {
+    max-width: 100%;
+  }
+  
+  .error-code {
+    justify-content: center;
+  }
+  
+  .page-title {
+    text-align: center;
+  }
+  
+  .error-description {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 4rem;
+  }
+  
+  .page-title {
+    font-size: 2.2rem;
+  }
+  
+  .error-description {
+    font-size: 1.1rem;
+  }
+  
+  .reasons-section {
+    padding: 20px;
+  }
+  
+  .reasons-list li {
+    padding-left: 25px;
+    font-size: 0.95rem;
+  }
+  
+  .home-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-code {
+    font-size: 3.5rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .anime-image-wrapper {
+    padding: 15px;
+  }
+}

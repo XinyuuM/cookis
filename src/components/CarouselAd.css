@@ -1,0 +1,207 @@
+/* 轮播广告位主容器 */
+.carousel-ad-section {
+  margin: 4rem auto;
+  padding: 0 1rem;
+  max-width: 1200px;
+}
+
+/* 轮播外层容器，控制比例和最大宽度 */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px; /* 与1280px图片宽度匹配 */
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* 核心：使用 aspect-ratio 严格固定 64:25 (2.56:1) 比例 */
+.carousel-swiper {
+  width: 100%;
+  aspect-ratio: 64 / 25; /* = 2.56 */
+}
+
+/* Swiper 滑动容器 */
+.carousel-swiper .swiper-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* ====== 单个广告卡片样式 - 背景图+文字叠加模式 ====== */
+.carousel-slide-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: relative; /* 为绝对定位的子元素建立参照 */
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.carousel-slide:hover {
+  transform: translateY(-3px);
+}
+
+/* 背景图片层 */
+.slide-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slide-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 关键：覆盖整个容器，保持比例，可能裁剪 */
+  object-position: center; /* 确保图片核心内容居中显示 */
+}
+
+/* 叠加在图片上的文字内容区域 */
+.slide-content-overlay {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  max-width: 60%; /* 限制文字宽度，避免过长 */
+  z-index: 2; /* 确保在背景层之上 */
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4); /* 半透明深色背景，提升可读性 */
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(2px); /* 轻微背景模糊，增强质感 */
+}
+
+.slide-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.slide-description {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.slide-cta {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  text-shadow: none;
+}
+
+.carousel-slide:hover .slide-cta {
+  background: white;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== 隐藏 Swiper 左右切换按钮 ====== */
+.carousel-swiper .swiper-button-next,
+.carousel-swiper .swiper-button-prev {
+  display: none; /* 彻底隐藏左右导航按钮 */
+}
+
+/* Swiper 分页指示器样式（保留，用于显示轮播进度） */
+.carousel-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5); /* 调整为半透明白色，与深色背景图更搭配 */
+  opacity: 1;
+}
+
+.carousel-swiper .swiper-pagination-bullet-active {
+  background: white; /* 激活态为纯白色，更醒目 */
+  transform: scale(1.2);
+}
+
+/* ====== 响应式设计调整 ====== */
+/* 中等屏幕 */
+@media (max-width: 992px) {
+  .carousel-ad-section {
+    margin: 3rem auto;
+  }
+  .carousel-container {
+    max-width: 95%;
+  }
+  .slide-content-overlay {
+    max-width: 70%;
+    bottom: 2rem;
+    left: 2rem;
+    padding: 1.2rem 1.5rem;
+  }
+  .slide-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* 小屏幕（平板/大手机） */
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  .slide-content-overlay {
+    max-width: 80%;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    padding: 1rem 1.2rem;
+  }
+  .slide-title {
+    font-size: 1.3rem;
+  }
+  .slide-description {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  .slide-cta {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* 超小屏幕（手机竖屏） */
+@media (max-width: 480px) {
+  .carousel-ad-section {
+    padding: 0 0.5rem;
+    margin: 2.5rem auto;
+  }
+  .slide-content-overlay {
+    max-width: 85%;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  .slide-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+  .slide-description {
+    font-size: 0.85rem;
+  }
+  .slide-cta {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}

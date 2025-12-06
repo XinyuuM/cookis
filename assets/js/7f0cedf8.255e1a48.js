@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkclassic=globalThis.webpackChunkclassic||[]).push([[1322],{38710:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"jobpal"}')}}]);

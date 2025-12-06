@@ -1,0 +1,603 @@
+/* src/components/DiskShare/DiskShare.module.css */
+/* 使用Docusaurus主题变量实现颜色统一 */
+
+/* ====== Docusaurus主题变量 ====== */
+:root {
+  /* 主色调 - 使用Docusaurus默认变量 */
+  --primary: var(--ifm-color-primary);
+  --primary-light: var(--ifm-color-primary-light);
+  --primary-lighter: var(--ifm-color-primary-lighter);
+  --primary-dark: var(--ifm-color-primary-dark);
+  --primary-darker: var(--ifm-color-primary-darker);
+  
+  /* 次要颜色 */
+  --secondary: var(--ifm-color-secondary);
+  --secondary-light: var(--ifm-color-secondary-light);
+  --secondary-dark: var(--ifm-color-secondary-dark);
+  
+  /* 背景和表面颜色 */
+  --surface: var(--ifm-background-color);
+  --surface-variant: var(--ifm-color-emphasis-100);
+  --surface-hover: var(--ifm-color-emphasis-200);
+  
+  /* 文字颜色 */
+  --text-primary: var(--ifm-font-color-base);
+  --text-secondary: var(--ifm-color-content-secondary);
+  --text-tertiary: var(--ifm-color-emphasis-700);
+  --text-disabled: var(--ifm-color-emphasis-500);
+  
+  /* 边框和轮廓 */
+  --outline: var(--ifm-color-emphasis-300);
+  --outline-variant: var(--ifm-color-emphasis-200);
+  
+  /* 状态颜色 */
+  --success: var(--ifm-color-success);
+  --error: var(--ifm-color-danger);
+  --warning: var(--ifm-color-warning);
+  --info: var(--ifm-color-info);
+  
+  /* 圆角设计系统 */
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-large: 16px;
+  --radius-extra-large: 24px;
+  --radius-full: 9999px;
+  
+  /* 组件特定颜色 */
+  --primary-container: rgba(var(--ifm-color-primary-rgb), 0.1);
+  --secondary-container: var(--ifm-color-emphasis-100);
+  --error-container: rgba(var(--ifm-color-danger-rgb), 0.1);
+  --success-container: rgba(var(--ifm-color-success-rgb), 0.1);
+  --warning-container: rgba(var(--ifm-color-warning-rgb), 0.1);
+  
+  /* 阴影系统 */
+  --shadow-1: var(--ifm-global-shadow-lw);
+  --shadow-2: var(--ifm-global-shadow-md);
+  --shadow-3: var(--ifm-global-shadow-tl);
+}
+
+/* 深色模式适配 */
+[data-theme='dark'] {
+  --surface-variant: var(--ifm-color-emphasis-200);
+  --surface-hover: var(--ifm-color-emphasis-300);
+  --primary-container: rgba(var(--ifm-color-primary-rgb), 0.2);
+  --secondary-container: var(--ifm-color-emphasis-200);
+  --outline: var(--ifm-color-emphasis-400);
+  --outline-variant: var(--ifm-color-emphasis-300);
+}
+
+/* ====== 主容器 ====== */
+.diskShareContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: var(--ifm-font-family-base);
+  color: var(--text-primary);
+}
+
+/* ====== 搜索和过滤区域 ====== */
+.searchSection {
+  margin-bottom: 32px;
+  background: var(--surface);
+  border-radius: var(--radius-large);
+  padding: 24px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid var(--outline-variant);
+}
+
+.searchHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.totalFiles {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.searchControls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.searchBox {
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 16px 52px 16px 48px;
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-extra-large);
+  background: var(--surface);
+  font-size: 16px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: var(--ifm-font-family-base);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.2);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+.quickJumpBox {
+  display: flex;
+  gap: 8px;
+}
+
+.quickJumpInput {
+  padding: 16px 20px;
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-medium);
+  background: var(--surface);
+  font-size: 16px;
+  color: var(--text-primary);
+  min-width: 120px;
+  font-family: var(--ifm-font-family-base);
+  transition: all 0.2s ease;
+}
+
+.quickJumpInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.2);
+}
+
+.filterControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filterButton {
+  padding: 10px 20px;
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-medium);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--ifm-font-family-base);
+}
+
+.filterButton:hover {
+  background: var(--surface-hover);
+  transform: translateY(-1px);
+}
+
+.filterButton.active {
+  background: var(--primary);
+  color: var(--ifm-color-white);
+  border-color: var(--primary);
+}
+
+/* ====== 卡片网格系统 - 确保卡片对齐 ====== */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+  align-items: stretch; /* 确保卡片高度一致 */
+}
+
+.fileCard {
+  background: var(--surface);
+  border-radius: var(--radius-large);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  transition: all 0.3s ease;
+  border: 1px solid var(--outline-variant);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* 确保所有卡片高度一致 */
+  min-height: 420px; /* 最小高度确保对齐 */
+}
+
+.fileCard:hover {
+  box-shadow: var(--shadow-3);
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.fileCard.highlighted {
+  animation: highlightPulse 2s ease;
+  border: 2px solid var(--primary);
+}
+
+@keyframes highlightPulse {
+  0% { box-shadow: 0 0 0 0 rgba(var(--ifm-color-primary-rgb), 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(var(--ifm-color-primary-rgb), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--ifm-color-primary-rgb), 0); }
+}
+
+/* ====== 卡片头部 ====== */
+.cardHeader {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--outline-variant);
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fileId {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--primary-container);
+  color: var(--primary);
+  border-radius: var(--radius-medium);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.cardDescription {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ====== 卡片内容区域 ====== */
+.cardContent {
+  padding: 20px 24px;
+  flex-grow: 1; /* 内容区域填充剩余空间 */
+  display: flex;
+  flex-direction: column;
+}
+
+.fileInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoLabel {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.infoValue {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.passwordGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.passwordItem {
+  background: var(--surface-variant);
+  border-radius: var(--radius-medium);
+  padding: 12px;
+  border: 1px solid var(--outline-variant);
+}
+
+.passwordLabel {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.passwordValue {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: 'Roboto Mono', 'SF Mono', Monaco, Consolas, monospace;
+  word-break: break-all;
+  letter-spacing: 0.5px;
+}
+
+.copyButton {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 4px 0 0 0;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  font-family: var(--ifm-font-family-base);
+}
+
+.copyButton:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ====== 标签组 ====== */
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.tag {
+  padding: 4px 10px;
+  background: var(--secondary-container);
+  color: var(--text-secondary);
+  border-radius: var(--radius-medium);
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--outline-variant);
+}
+
+/* ====== 卡片底部 - 操作按钮 ====== */
+.cardFooter {
+  padding: 16px 24px;
+  background: var(--surface-variant);
+  border-top: 1px solid var(--outline-variant);
+  flex-shrink: 0;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+}
+
+/* 主要按钮 - 圆角设计 */
+.primaryButton {
+  flex: 1;
+  padding: 14px 24px;
+  background: var(--primary);
+  color: var(--ifm-color-white);
+  border: none;
+  border-radius: var(--radius-medium);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--ifm-font-family-base);
+  letter-spacing: 0.3px;
+}
+
+.primaryButton:hover {
+  background: var(--primary-dark);
+  box-shadow: var(--shadow-2);
+  transform: translateY(-1px);
+}
+
+.primaryButton:disabled {
+  background: var(--text-disabled);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* 次要按钮 - 圆角设计 */
+.secondaryButton {
+  padding: 14px 20px;
+  background: var(--secondary-container);
+  color: var(--text-primary);
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-medium);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--ifm-font-family-base);
+}
+
+.secondaryButton:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+/* 危险按钮 - 圆角设计 */
+.dangerButton {
+  padding: 14px 20px;
+  background: var(--error-container);
+  color: var(--error);
+  border: 1px solid rgba(var(--ifm-color-danger-rgb), 0.3);
+  border-radius: var(--radius-medium);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--ifm-font-family-base);
+}
+
+.dangerButton:hover {
+  background: rgba(var(--ifm-color-danger-rgb), 0.2);
+  transform: translateY(-1px);
+}
+
+/* ====== 状态指示器 ====== */
+.statusIndicator {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: var(--radius-medium);
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 12px;
+}
+
+.statusAvailable {
+  background: var(--success-container);
+  color: var(--success);
+  border: 1px solid rgba(var(--ifm-color-success-rgb), 0.3);
+}
+
+.statusExpired {
+  background: var(--warning-container);
+  color: var(--warning);
+  border: 1px solid rgba(var(--ifm-color-warning-rgb), 0.3);
+}
+
+.statusLinkFailed {
+  background: var(--error-container);
+  color: var(--error);
+  border: 1px solid rgba(var(--ifm-color-danger-rgb), 0.3);
+}
+
+/* ====== 空状态 ====== */
+.emptyState {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border-radius: var(--radius-large);
+  border: 2px dashed var(--outline);
+}
+
+.emptyIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.emptyState h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.emptyState p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ====== 响应式设计 ====== */
+@media (max-width: 992px) {
+  .cardsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .diskShareContainer {
+    padding: 16px;
+  }
+  
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .searchSection {
+    padding: 20px;
+  }
+  
+  .searchControls {
+    grid-template-columns: 1fr;
+  }
+  
+  .quickJumpBox {
+    flex-direction: column;
+  }
+  
+  .quickJumpInput {
+    min-width: 100%;
+  }
+  
+  .fileInfo {
+    grid-template-columns: 1fr;
+  }
+  
+  .passwordGroup {
+    grid-template-columns: 1fr;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+  }
+  
+  .primaryButton,
+  .secondaryButton,
+  .dangerButton {
+    width: 100%;
+  }
+  
+  .fileCard {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .filterControls {
+    justify-content: center;
+  }
+  
+  .fileCard {
+    min-height: 380px;
+  }
+}

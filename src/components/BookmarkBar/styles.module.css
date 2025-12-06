@@ -1,0 +1,103 @@
+.bookmarkBar {
+  background: var(--ifm-card-background-color);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  margin: 1rem 0;
+}
+
+.categoryTabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 0.5rem;
+}
+
+.categoryTab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.categoryTab:hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-primary);
+}
+
+.categoryTab.active {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.bookmarkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.bookmarkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.bookmarkItem:hover {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-50);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+}
+
+.itemIcon {
+  flex-shrink: 0;
+  color: var(--ifm-color-primary);
+  margin-top: 0.125rem;
+}
+
+.itemContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemTitle {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.itemDescription {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  line-height: 1.4;
+}
+
+/* 紧凑模式 */
+.bookmarkBar.compact .categoryTab span {
+  display: none;
+}
+
+.bookmarkBar.compact .bookmarkGrid {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.bookmarkBar.compact .bookmarkItem {
+  padding: 0.5rem;
+}

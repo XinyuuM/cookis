@@ -1,0 +1,274 @@
+/* Material 3 设计系统变量 */
+:root {
+  /* 引用Docusaurus的主题颜色 */
+  --md-sys-color-primary: var(--ifm-color-primary);
+  --md-sys-color-primary-container: var(--ifm-color-primary-dark);
+  --md-sys-color-secondary: var(--ifm-color-secondary);
+  --md-sys-color-secondary-container: var(--ifm-color-secondary-dark);
+  --md-sys-color-surface: var(--ifm-background-color);
+  --md-sys-color-surface-variant: var(--ifm-background-surface-color);
+  --md-sys-color-on-surface: var(--ifm-font-color-base);
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-outline: var(--ifm-color-emphasis-300);
+  
+  /* Material 3 间距系统 */
+  --md-sys-spacing-xs: 4px;
+  --md-sys-spacing-sm: 8px;
+  --md-sys-spacing-md: 16px;
+  --md-sys-spacing-lg: 24px;
+  --md-sys-spacing-xl: 32px;
+  
+  /* Material 3 圆角 */
+  --md-sys-shape-corner-xs: 4px;
+  --md-sys-shape-corner-sm: 8px;
+  --md-sys-shape-corner-md: 12px;
+  --md-sys-shape-corner-lg: 16px;
+  --md-sys-shape-corner-xl: 28px;
+  
+  /* Material 3 高度 */
+  --md-sys-height-xs: 28px;
+  --md-sys-height-sm: 36px;
+  --md-sys-height-md: 48px;
+  --md-sys-height-lg: 56px;
+  
+  /* 动画 */
+  --md-sys-motion-duration-short: 200ms;
+  --md-sys-motion-duration-medium: 300ms;
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* 安全链接样式 */
+.safeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--md-sys-spacing-xs);
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+  padding: var(--md-sys-spacing-xs) var(--md-sys-spacing-sm);
+  border-radius: var(--md-sys-shape-corner-md);
+  transition: all var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font: inherit;
+}
+
+.safeLink:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 8%, transparent);
+}
+
+.safeLink:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.safeLink.withWarning {
+  color: var(--md-sys-color-error);
+}
+
+.safeLink.withWarning:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-error) 8%, transparent);
+}
+
+.safeLinkIcon {
+  font-size: 1.1em;
+  opacity: 0.8;
+}
+
+/* 模态框样式 - Material 3 对话框 */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+}
+
+.modalDialog {
+  background-color: #fff;
+  border-radius: var(--md-sys-shape-corner-lg);
+  padding: var(--md-sys-spacing-xl);
+  max-width: 560px;
+  width: 90%;
+  box-shadow: 
+    0px 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0px 9px 46px 8px rgba(0, 0, 0, 0.12),
+    0px 11px 15px -7px rgba(0, 0, 0, 0.2);
+  animation: slideUp var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+}
+
+.modalTitle {
+  margin: 0 0 var(--md-sys-spacing-md) 0;
+  color: var(--md-sys-color-on-surface);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.modalContent {
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: var(--md-sys-spacing-xl);
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 0.9;
+}
+
+.modalLink {
+  display: block;
+  margin-top: var(--md-sys-spacing-sm);
+  padding: var(--md-sys-spacing-sm);
+  background-color: var(--md-sys-color-surface-variant);
+  border-radius: var(--md-sys-shape-corner-sm);
+  color: var(--md-sys-color-primary);
+  word-break: break-all;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--md-sys-spacing-sm);
+}
+
+/* Material 3 按钮样式 */
+.button {
+  padding: 0 var(--md-sys-spacing-lg);
+  height: var(--md-sys-height-md);
+  border-radius: var(--md-sys-shape-corner-lg);
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  text-transform: uppercase;
+}
+
+.buttonSecondary {
+  background-color: transparent;
+  color: var(--md-sys-color-primary);
+}
+
+.buttonSecondary:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 8%, transparent);
+}
+
+.buttonPrimary {
+  background-color: var(--md-sys-color-primary);
+  color: white;
+}
+
+.buttonPrimary:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 90%, black);
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Material 3 复选框 */
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--md-sys-spacing-sm);
+  margin-bottom: var(--md-sys-spacing-lg);
+  padding: var(--md-sys-spacing-xs);
+  border-radius: var(--md-sys-shape-corner-sm);
+  cursor: pointer;
+}
+
+.checkboxContainer:hover {
+  background-color: var(--md-sys-color-surface-variant);
+}
+
+.checkboxInput {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: 2px solid var(--md-sys-color-outline);
+  background-color: transparent;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+}
+
+.checkboxInput:checked {
+  background-color: var(--md-sys-color-primary);
+  border-color: var(--md-sys-color-primary);
+}
+
+.checkboxInput:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 14px;
+}
+
+.checkboxLabel {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 无障碍支持 */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+  .modalDialog {
+    width: 95%;
+    padding: var(--md-sys-spacing-lg);
+    margin: var(--md-sys-spacing-md);
+  }
+  
+  .modalActions {
+    flex-direction: column;
+  }
+  
+  .button {
+    width: 100%;
+    justify-content: center;
+  }
+}

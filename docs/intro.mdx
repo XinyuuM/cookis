@@ -1,0 +1,73 @@
+---
+title: 收藏夹
+sidebar_label: 茵蒂克丝
+sidebar_position: 1
+slug: /
+hide_table_of_contents: true
+---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+import Card from '@site/src/components/Card';
+import DailyGallery from '@site/src/components/DailyGallery';
+import BookmarkBar from '@site/src/components/BookmarkBar';
+import CarouselBanner from '@site/src/components/CarouselBanner'
+
+# 收藏
+
+<div style={{display: 'flex', flexWrap: 'wrap', gap: '20px'}}>
+  <Card
+    icon="fas fa-tv"
+    title="视频"
+    description="我收藏的各种有趣、有教育意义的视频。"
+    link="/docs/video"
+  />
+  <Card
+	icon="fas fa-video"
+    title="电影"
+    description="我看过的和想看的电影列表，附有简短评论。"
+    link="/docs/movie"
+  />
+  <Card
+	icon="fas fa-music"
+    title="音乐"
+    description="宝宝巴士"
+    link="/docs/music"
+  />
+  <Card
+	icon="fas fa-book"
+    title="书籍"
+    description="书中自有黄金屋"
+    link="/docs/book"
+  />
+  <Card
+	icon="fas fa-globe"
+    title="专栏"
+    description="一起青年大学习"
+    link="/docs/article"
+  />
+  <Card
+	icon="fas fa-camera"
+    title="穿搭"
+    description="兄弟你好香🤤"
+    link="/docs/fashion"
+  />
+  <Card
+	icon="fas fa-burger"
+    title="美食"
+    description="我喜欢的音乐专辑和歌曲。"
+    link="/docs/food"
+  />
+  <Card
+	icon="fas fa-gear"
+    title="工具"
+    description="亲测好用👌"
+    link="/docs/tools"
+  />
+  <Card
+	icon="fas fa-chess"
+    title="游戏"
+    description="全世界都在催你长大，只有任天堂把你当作最初的那个天真的小朋友😙"
+    link="/docs/game"
+  />
+ 
+</div>
+ <BookmarkBar />

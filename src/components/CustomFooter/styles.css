@@ -1,0 +1,93 @@
+/* src/components/CustomFooter/styles.css */
+.custom-footer-container {
+  padding: 2rem 1rem;
+  font-family: var(--ifm-font-family-base);
+}
+
+/* 卡片主体 */
+.custom-footer-card {
+  max-width: var(--ifm-container-width);
+  margin: 0 auto;
+  padding: 2.5rem;
+  background-color: var(--ifm-background-surface-color); /* 使用CSS变量 */
+  border-radius: 12px; /* 圆角营造卡片感 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 阴影增强立体感 */
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* 内容布局 */
+.custom-footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  text-align: left;
+}
+
+/* 每个板块的样式 */
+.footer-section-title {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.7rem;
+}
+
+/* 链接样式 */
+.footer-link {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  transition: color var(--ifm-transition-fast);
+  opacity: 0.9;
+}
+
+.footer-link:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+  opacity: 1;
+}
+
+/* 版权与备案信息样式 */
+.footer-copyright,
+.footer-beian,
+.footer-tech {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.footer-beian-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-beian-link:hover {
+  text-decoration: underline;
+}
+
+/* 深色模式适配 */
+html[data-theme='dark'] .custom-footer-card {
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+/* 响应式：小屏幕下堆叠 */
+@media (max-width: 768px) {
+  .custom-footer-card {
+    padding: 1.5rem;
+  }
+  .custom-footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
